@@ -30,6 +30,10 @@
     width: 300px;
 }
 
+#startbutton:hover {
+    cursor: pointer;
+}
+
 #questionfield {
     font-size: 32px
 }
@@ -38,6 +42,31 @@
     margin-left: 50px;
     margin-right: 50px;
     font-size: 23px;
+}
+
+.choice:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#timer {
+    font-size: 23px;
+}
+
+#message {
+    font-size: 28px;
+}
+
+#right {
+    font-size: 23px;
+}
+
+#wrong {
+    font-size: 23px;
+}
+
+#unanswered {
+    font-size: 23px
 }
 
 /*button {*/

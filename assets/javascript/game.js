@@ -64,6 +64,10 @@ function decrement() {
 // Sets up each screen, hides/shows various elements as needed
 function homeScreen() {
     $("#restartbutton").hide()
+    $("#message").hide()
+    $("#right").hide()
+    $("#wrong").hide()
+    $("#unanswered").hide()
     $("#startbutton").show()
     $("#startbutton").html('<button style="border: none; background-color: transparent; width: 200px)"></button>');
     $("#timer").hide()
@@ -80,13 +84,19 @@ function firstQuestion() {
     console.log(questions[0].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
+    $("#questionfield").show()
+    $("#answerone").show()
+    $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[0].question);
     $("#answerone").text(questions[0].wrongAnswers[0]);
     $("#answerfour").text(questions[0].wrongAnswers[1]);
     $("#answerthree").text(questions[0].wrongAnswers[2]);
-    $("#answerfour").show()
     $("#answertwo").text(questions[0].rightAnswer);
     $("#home").css('background-image', 'url(' + "assets/images/hyrule2.jpg" + ')');
     currentQuestion = 1;
@@ -97,11 +107,15 @@ function secondQuestion() {
     console.log(questions[1].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
     $("#questionfield").show()
     $("#answerone").show()
     $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[1].question);
     $("#answerone").text(questions[1].wrongAnswers[0]);
     $("#answertwo").text(questions[1].wrongAnswers[1]);
@@ -115,11 +129,15 @@ function thirdQuestion() {
     console.log(questions[2].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
     $("#questionfield").show()
     $("#answerone").show()
     $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[2].question);
     $("#answerfour").text(questions[2].wrongAnswers[0]);
     $("#answertwo").text(questions[2].wrongAnswers[1]);
@@ -133,11 +151,15 @@ function fourthQuestion() {
     console.log(questions[3].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
     $("#questionfield").show()
     $("#answerone").show()
     $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[3].question);
     $("#answerone").text(questions[3].wrongAnswers[0]);
     $("#answertwo").text(questions[3].wrongAnswers[1]);
@@ -151,11 +173,15 @@ function fifthQuestion() {
     console.log(questions[4].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
     $("#questionfield").show()
     $("#answerone").show()
     $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[4].question);
     $("#answerone").text(questions[4].wrongAnswers[0]);
     $("#answerthree").text(questions[4].wrongAnswers[1]);
@@ -169,11 +195,15 @@ function sixthQuestion() {
     console.log(questions[5].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
     $("#questionfield").show()
     $("#answerone").show()
     $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[5].question);
     $("#answerone").text(questions[5].wrongAnswers[0]);
     $("#answertwo").text(questions[5].wrongAnswers[1]);
@@ -187,11 +217,15 @@ function seventhQuestion() {
     console.log(questions[6].question);
     startGameClock();
     $("#timer").show();
+    $("#message").hide()
+    $("#right").hide()
     $("#timer").html("Time remaining: " + time + " seconds!!");
     timeLeft = setTimeout(timeOut, 1000 * 23);
     $("#questionfield").show()
     $("#answerone").show()
     $("#answertwo").show()
+    $("#answerthree").show()
+    $("#answerfour").show()
     $("#questionfield").text(questions[6].question);
     $("#answerfour").text(questions[6].wrongAnswers[0]);
     $("#answertwo").text(questions[6].wrongAnswers[1]);
@@ -202,14 +236,19 @@ function seventhQuestion() {
 }
 
 function finalPage() {
-    $("#questionfield").show()
-    $("#answerone").show()
-    $("#answertwo").show()
-    $("#questionfield").html("<strong>Thank you for playing!!</strong>");
-    $("#answerone").html("Questions right: " + numberCorrect);
-    $("#answertwo").html("Questions wrong: " + numberWrong);
-    $("#answerthree").html("Questions unanswered: " + numberUnanswered)
+    $("#questionfield").hide()
+    $("#answerone").hide()
+    $("#answertwo").hide()
+    $("#answerthree").hide()
     $("#answerfour").hide();
+    $("#message").show()
+    $("#right").show()
+    $("#wrong").show()
+    $("#unanswered").show()
+    $("#message").html("<strong>Thank you for playing!!</strong>");
+    $("#right").html("Questions right: " + numberCorrect);
+    $("#wrong").html("Questions wrong: " + numberWrong);
+    $("#unanswered").html("Questions unanswered: " + numberUnanswered)
     $("#restartbutton").show()
     $("#restartbutton").html("<button>RESTART</button>");
     currentQuestion = 8;
@@ -261,8 +300,12 @@ function correctSlide() {
     $("#questionfield").hide()
     $("#answerone").hide()
     $("#answertwo").hide()
-    $("#answerthree").text("You're right!!")
-    $("#answerfour").html("<img src=" + images[currentQuestion - 1] + " width='400px'>")
+    $("#answerthree").hide()
+    $("#answerfour").hide()
+    $("#message").show()
+    $("#right").show()
+    $("#message").text("You're right!!")
+    $("#right").html("<img src=" + images[currentQuestion - 1] + " width='400px'>")
 }
 
 function incorrectSlide() {
@@ -274,8 +317,12 @@ function incorrectSlide() {
     $("#questionfield").hide()
     $("#answerone").hide()
     $("#answertwo").hide()
-    $("#answerthree").text("Wrong!! The correct answer was " + questions[currentQuestion - 1].rightAnswer)
-    $("#answerfour").html("<img src=" + images[currentQuestion - 1] + " width='400px'>")
+    $("#answerthree").hide()
+    $("#answerfour").hide()
+    $("#message").show()
+    $("#right").show()
+    $("#message").text("Wrong!! The correct answer was: " + questions[currentQuestion - 1].rightAnswer)
+    $("#right").html("<img src=" + images[currentQuestion - 1] + " width='400px'>")
 }
 
 function timeOut() {
@@ -288,8 +335,12 @@ function timeOut() {
     $("#questionfield").hide()
     $("#answerone").hide()
     $("#answertwo").hide()
-    $("#answerthree").text("You ran out of time! The correct answer was " + questions[currentQuestion - 1].rightAnswer)
-    $("#answerfour").html("<img src=" + images[currentQuestion - 1] + " width='400px'>")
+    $("#answerthree").hide()
+    $("#answerfour").hide()
+    $("#message").show()
+    $("#right").show()
+    $("#message").text("You ran out of time! The correct answer was " + questions[currentQuestion - 1].rightAnswer)
+    $("#right").html("<img src=" + images[currentQuestion - 1] + " width='400px'>")
 
 }
 
