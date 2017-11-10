@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>;
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!--Title-->
+        <!--<div class="row">-->
+        <!--    <div class="col-md-2"></div>-->
+        <!--    <div class="col-md-8 title">-->
+        <!--<h1>Super Smash Trivia Game</h1>-->
+        <!--    </div>-->
+        <!--    <div class="col-md-2"></div>-->
+        <!--</div>-->
+
+        <!--Question area-->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 gamearea" id="home">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p id="timer">
+
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <p id="questionfield" class=limit></p>
+                        <p id="answerone" class="choice limit" data-choice="1"></p>
+                        <p id="answertwo" class="choice limit" data-choice="2"></p>
+                        <p id="answerthree" class="choice limit" data-choice="3"></p>
+                        <p id="answerfour" class="choice limit" data-choice="4"></p>
+                        <div id="startbutton"></div>
+                        <p id="restartbutton"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+
+
+</html>
